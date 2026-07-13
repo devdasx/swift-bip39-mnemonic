@@ -57,6 +57,13 @@ Install the macOS CLI from GitHub Releases:
 curl -fsSL https://raw.githubusercontent.com/devdasx/swift-bip39-mnemonic/main/install.sh | sh
 ```
 
+Or install with Homebrew:
+
+```bash
+brew tap devdasx/tap
+brew install swiftbip39
+```
+
 Use it:
 
 ```bash

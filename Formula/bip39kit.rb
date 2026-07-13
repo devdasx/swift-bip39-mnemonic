@@ -1,8 +1,8 @@
 class Bip39kit < Formula
   desc "BIP-39 mnemonic generator, validator, and seed derivation CLI"
   homepage "https://github.com/devdasx/bip39-mnemonic-kit"
-  url "https://github.com/devdasx/bip39-mnemonic-kit/archive/refs/tags/2.0.0.tar.gz"
-  sha256 "b7d44c2d7a5cdb9c6efdb677385cfad457906e2f3ad93f130e3422e516000212"
+  url "https://github.com/devdasx/bip39-mnemonic-kit/archive/refs/tags/2.0.1.tar.gz"
+  sha256 "b816ef5abf0e8583f7867066727279b211e75daf40bd655790b5a471c3b13f8d"
   license "MIT"
 
   depends_on xcode: ["16.0", :build]

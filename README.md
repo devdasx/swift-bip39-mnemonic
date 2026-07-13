@@ -214,7 +214,7 @@ let deterministic = entropy_hex_to_mnemonic("00000000000000000000000000000000")?
 Install from GitHub:
 
 ```bash
-go get github.com/devdasx/bip39-mnemonic-kit/v2/go/bip39@v2.0.1
+go get github.com/devdasx/bip39-mnemonic-kit/v2@v2.0.1
 ```
 
 Use it:

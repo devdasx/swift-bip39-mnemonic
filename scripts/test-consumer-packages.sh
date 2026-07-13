@@ -146,6 +146,55 @@ need_command() {
   exit 1
 }
 
+need_python() {
+  local candidates=()
+  if [[ -n "${PYTHON_BIN:-}" ]]; then
+    candidates+=("$PYTHON_BIN")
+  fi
+  candidates+=("/usr/bin/python3")
+  if have python3; then
+    candidates+=("$(command -v python3)")
+  fi
+
+  local candidate
+  local test_dir
+  for candidate in "${candidates[@]}"; do
+    [[ -x "$candidate" ]] || continue
+    test_dir="$(mktemp -d "${TMPDIR:-/tmp}/bip39kit-python-check.XXXXXX")"
+    if "$candidate" -m venv "$test_dir/.venv" >/dev/null 2>&1 &&
+       "$test_dir/.venv/bin/python" -m pip --version >/dev/null 2>&1; then
+      rm -rf "$test_dir"
+      printf '%s' "$candidate"
+      return 0
+    fi
+    rm -rf "$test_dir"
+  done
+
+  if [[ "$INSTALL_MISSING" -eq 1 ]]; then
+    local brew="${BREW_BIN:-}"
+    if [[ -z "$brew" && -x /opt/homebrew/bin/brew ]]; then
+      brew=/opt/homebrew/bin/brew
+    elif [[ -z "$brew" && -x /usr/local/bin/brew ]]; then
+      brew=/usr/local/bin/brew
+    elif [[ -z "$brew" ]] && have brew; then
+      brew="$(command -v brew)"
+    fi
+    if [[ -n "$brew" ]]; then
+      say "Installing Python with Homebrew"
+      "$brew" install python
+      local brewed_python
+      brewed_python="$(command -v python3)"
+      if [[ -x "$brewed_python" ]]; then
+        printf '%s' "$brewed_python"
+        return 0
+      fi
+    fi
+  fi
+
+  echo "Missing working python3 with venv and pip. Set PYTHON_BIN to a working interpreter." >&2
+  exit 1
+}
+
 assert_eq() {
   local actual="$1"
   local expected="$2"
@@ -161,7 +210,7 @@ assert_eq() {
 swift_bin="$(need_command SWIFT_BIN swift swift)"
 node_bin="$(need_command NODE_BIN node node)"
 npm_bin="$(need_command NPM_BIN npm node)"
-python_bin="$(need_command PYTHON_BIN python3 python)"
+python_bin="$(need_python)"
 cargo_bin="$(need_command CARGO_BIN cargo rust)"
 go_bin="$(need_command GO_BIN go go)"
 dart_bin="$(need_command DART_BIN dart dart)"
@@ -267,7 +316,8 @@ precondition(BIP39.validate(phrase))
 precondition(!BIP39.validate(phrase.replacingOccurrences(of: "about", with: "above")))
 let seed = try BIP39.seed(from: phrase, passphrase: "TREZOR").hex
 precondition(seed == expectedSeed, seed)
-precondition(try BIP39.generate(strength: .bits128).words.count == 12)
+let generated = try BIP39.generate(strength: .bits128)
+precondition(generated.words.count == 12)
 print("swift-ok")
 
 extension Data {
@@ -427,7 +477,7 @@ test_go() {
   local dir="$WORKDIR/go-consumer"
   mkdir -p "$dir"
   (cd "$dir" && "$go_bin" mod init bip39kit-go-consumer >/dev/null)
-  (cd "$dir" && "$go_bin" get "github.com/${GITHUB_SLUG}/v2/go/bip39@v$REF")
+  (cd "$dir" && GOPROXY=direct GOSUMDB=off "$go_bin" get "github.com/${GITHUB_SLUG}/v2@v$REF")
   cat > "$dir/main.go" <<'GO'
 package main
 
@@ -462,7 +512,7 @@ func main() {
 	fmt.Println("go-ok")
 }
 GO
-  (cd "$dir" && "$go_bin" run . | grep -q "go-ok")
+  (cd "$dir" && GOPROXY=direct GOSUMDB=off "$go_bin" run . | grep -q "go-ok")
   pass "Go"
 }
 

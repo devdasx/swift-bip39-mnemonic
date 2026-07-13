@@ -1,5 +1,18 @@
 # BIP39 Mnemonic Kit
 
+[![CI](https://github.com/devdasx/bip39-mnemonic-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/devdasx/bip39-mnemonic-kit/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/devdasx/bip39-mnemonic-kit?sort=semver)](https://github.com/devdasx/bip39-mnemonic-kit/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![CocoaPods](https://img.shields.io/cocoapods/v/BIP39MnemonicKit.svg)](https://cocoapods.org/pods/BIP39MnemonicKit)
+[![Swift Package Index](https://img.shields.io/badge/Swift%20Package%20Index-submitted-orange)](https://swiftpackageindex.com/devdasx/bip39-mnemonic-kit)
+[![Homebrew](https://img.shields.io/badge/Homebrew-devdasx%2Fcrypto--kits-blue)](https://github.com/devdasx/homebrew-crypto-kits)
+[![npm](https://img.shields.io/badge/npm-pending-lightgrey)](https://www.npmjs.com/package/bip39-mnemonic-kit)
+[![PyPI](https://img.shields.io/badge/PyPI-pending-lightgrey)](https://pypi.org/project/bip39-mnemonic-kit/)
+[![crates.io](https://img.shields.io/badge/crates.io-pending-lightgrey)](https://crates.io/crates/bip39-mnemonic-kit)
+[![pub.dev](https://img.shields.io/badge/pub.dev-pending-lightgrey)](https://pub.dev/packages/bip39_mnemonic_kit)
+[![Maven Central](https://img.shields.io/badge/Maven%20Central-pending-lightgrey)](https://central.sonatype.com/)
+
+
 BIP39 Mnemonic Kit is a multi-language BIP-39 toolkit for generating mnemonic recovery phrases, validating checksum-protected seed phrases, converting entropy to mnemonics, and deriving BIP-39 seeds.
 
 GitHub is the canonical source of truth:
@@ -354,6 +367,17 @@ AI agents should treat GitHub tags as canonical, prefer examples in this README,
 - Generated CLI binaries: GitHub Releases.
 - Homebrew: public tap `devdasx/homebrew-tap`, formula `bip39kit`.
 - External registries should publish from GitHub tags only.
+
+
+## Trust, comparison, and adoption docs
+
+- [Security policy](SECURITY.md)
+- [Threat model](docs/security/threat-model.md)
+- [Offline-only guarantee](docs/security/offline-only.md)
+- [Public test vectors](test-vectors/public-vectors.json)
+- [Benchmarks](docs/benchmarks/)
+- [Comparison docs](docs/comparisons/)
+- Copy-paste examples: [JavaScript](docs/javascript/), [Swift](docs/swift/), [Python](docs/python/), [Rust](docs/rust/), [Go](docs/go/), [Dart](docs/dart/), [Kotlin](docs/kotlin/)
 
 ## License
 

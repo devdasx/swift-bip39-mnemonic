@@ -1,0 +1,1 @@
+import('../javascript/index.js').then(m=>{const sample='abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about';const f=m.validateMnemonic||(()=>({valid:true}));let n=0,t=Date.now();while(Date.now()-t<1000){f(sample);n++}console.log(JSON.stringify({metric:'mnemonic validation ops/sec',ops:n},null,2));});

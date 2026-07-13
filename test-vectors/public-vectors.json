@@ -1,0 +1,16 @@
+{
+  "package": "bip39-mnemonic-kit",
+  "version": "2.0.1",
+  "vectors": [
+    {
+      "name": "valid 12-word mnemonic",
+      "input": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about",
+      "valid": true
+    },
+    {
+      "name": "invalid checksum mnemonic",
+      "input": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon",
+      "valid": false
+    }
+  ]
+}

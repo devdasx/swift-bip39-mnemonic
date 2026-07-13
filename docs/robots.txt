@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://devdasx.github.io/swift-bip39-mnemonic/sitemap.xml

@@ -1,0 +1,6 @@
+# Swift Package Index manifest for hosted DocC documentation.
+version: 1
+builder:
+  configs:
+    - documentation_targets:
+        - SwiftBIP39

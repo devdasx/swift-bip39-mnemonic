@@ -45,7 +45,7 @@ Or in `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/devdasx/swift-bip39-mnemonic.git", from: "1.0.0")
+    .package(url: "https://github.com/devdasx/swift-bip39-mnemonic.git", from: "1.0.1")
 ]
 ```
 

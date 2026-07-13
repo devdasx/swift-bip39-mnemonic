@@ -1,0 +1,29 @@
+name: Release CocoaPods
+
+on:
+  push:
+    tags:
+      - '*.*.*'
+
+jobs:
+  publish:
+    runs-on: macos-latest
+    env:
+      COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+
+      - name: Install CocoaPods
+        run: gem install cocoapods
+
+      - name: Lint podspec
+        run: pod lib lint SwiftBIP39.podspec --allow-warnings --skip-tests --swift-version=6.0 --platforms=ios,macos
+
+      - name: Publish podspec
+        run: pod trunk push SwiftBIP39.podspec --allow-warnings --skip-tests --swift-version=6.0 --platforms=ios,macos

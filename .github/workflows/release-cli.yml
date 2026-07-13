@@ -25,7 +25,8 @@ jobs:
       - run: |
           mkdir -p dist
           cp .build/release/swiftbip39 dist/swiftbip39
-          tar -C dist -czf "${{ matrix.asset }}" swiftbip39
+          cp -R .build/release/SwiftBIP39_SwiftBIP39.bundle dist/SwiftBIP39_SwiftBIP39.bundle
+          tar -C dist -czf "${{ matrix.asset }}" swiftbip39 SwiftBIP39_SwiftBIP39.bundle
           shasum -a 256 "${{ matrix.asset }}" > "${{ matrix.asset }}.sha256"
       - uses: actions/upload-artifact@v4
         with:

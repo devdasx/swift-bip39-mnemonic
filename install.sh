@@ -15,8 +15,8 @@ Usage:
 
 Options:
   --prefix DIR       Install prefix. Default: ~/.local
-  --version VERSION  Release version, for example 1.1.0. Default: latest
-  --uninstall        Remove the installed binary from PREFIX/bin
+  --version VERSION  Release version, for example 1.1.2. Default: latest
+  --uninstall        Remove the installed binary and resource bundle from PREFIX/bin
   --help             Show help
 EOF
 }
@@ -35,6 +35,7 @@ while [ "$#" -gt 0 ]; do
       ;;
     --uninstall)
       rm -f "$PREFIX/bin/$BIN"
+      rm -rf "$PREFIX/bin/SwiftBIP39_SwiftBIP39.bundle"
       echo "removed $PREFIX/bin/$BIN"
       exit 0
       ;;
@@ -91,6 +92,8 @@ actual="$(shasum -a 256 "$tmp/$asset" | awk '{print $1}')"
 tar -xzf "$tmp/$asset" -C "$tmp"
 mkdir -p "$PREFIX/bin"
 install -m 755 "$tmp/$BIN" "$PREFIX/bin/$BIN"
+rm -rf "$PREFIX/bin/SwiftBIP39_SwiftBIP39.bundle"
+cp -R "$tmp/SwiftBIP39_SwiftBIP39.bundle" "$PREFIX/bin/SwiftBIP39_SwiftBIP39.bundle"
 
 echo "installed $BIN to $PREFIX/bin/$BIN"
 case ":$PATH:" in

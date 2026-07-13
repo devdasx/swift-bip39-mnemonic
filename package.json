@@ -1,6 +1,6 @@
 {
   "name": "swiftbip39",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "BIP-39 mnemonic generation, validation, and seed derivation for Node.js, JavaScript, and React Native.",
   "type": "module",
   "main": "./javascript/index.js",

@@ -21,7 +21,7 @@ This package is intentionally named for real search terms developers use:
 
 ## Requirements
 
-- Swift 6.3+
+- Swift 6.2+
 - iOS 15+
 - macOS 12+
 - tvOS 15+
@@ -45,7 +45,7 @@ Or in `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/devdasx/swift-bip39-mnemonic.git", from: "1.0.1")
+    .package(url: "https://github.com/devdasx/swift-bip39-mnemonic.git", from: "1.0.2")
 ]
 ```
 

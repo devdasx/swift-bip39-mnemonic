@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "swiftbip39"
+version = "1.1.0"
+description = "BIP-39 mnemonic generation, validation, and seed derivation."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [
+  { name = "ROYO STUDIOS", email = "royostudios13@gmail.com" }
+]
+keywords = ["bip39", "mnemonic", "seed phrase", "recovery phrase", "wallet"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Security :: Cryptography"
+]
+
+[project.urls]
+Homepage = "https://github.com/devdasx/swift-bip39-mnemonic"
+Repository = "https://github.com/devdasx/swift-bip39-mnemonic"
+
+[tool.setuptools]
+package-dir = { "" = "python" }
+
+[tool.setuptools.packages.find]
+where = ["python"]
+
+[tool.setuptools.package-data]
+swiftbip39 = ["english.txt"]

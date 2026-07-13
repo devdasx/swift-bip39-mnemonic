@@ -15,6 +15,10 @@ let package = Package(
             name: "SwiftBIP39",
             targets: ["SwiftBIP39"]
         ),
+        .executable(
+            name: "swiftbip39",
+            targets: ["SwiftBIP39CLI"]
+        ),
     ],
     targets: [
         .target(
@@ -22,6 +26,10 @@ let package = Package(
             resources: [
                 .process("Resources")
             ]
+        ),
+        .executableTarget(
+            name: "SwiftBIP39CLI",
+            dependencies: ["SwiftBIP39"]
         ),
         .testTarget(
             name: "SwiftBIP39Tests",

@@ -45,8 +45,47 @@ Or in `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/devdasx/swift-bip39-mnemonic.git", from: "1.0.2")
+    .package(url: "https://github.com/devdasx/swift-bip39-mnemonic.git", from: "1.1.0")
 ]
+```
+
+## Terminal CLI
+
+Install the macOS CLI from GitHub Releases:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/devdasx/swift-bip39-mnemonic/main/install.sh | sh
+```
+
+Use it:
+
+```bash
+swiftbip39 generate --words 12
+swiftbip39 validate "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about"
+swiftbip39 seed "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about" --passphrase TREZOR
+```
+
+## Other Ecosystems
+
+This repository also contains native packages for JavaScript/React Native, Python, Go, Rust, Dart/Flutter, and Kotlin. GitHub remains the source of truth for every ecosystem package.
+
+Install directly from GitHub where supported:
+
+```bash
+npm install github:devdasx/swift-bip39-mnemonic
+pip install git+https://github.com/devdasx/swift-bip39-mnemonic.git@1.1.0
+go get github.com/devdasx/swift-bip39-mnemonic/go/bip39@v1.1.0
+cargo add --git https://github.com/devdasx/swift-bip39-mnemonic --tag 1.1.0 swiftbip39
+```
+
+Dart/Flutter can use a Git dependency:
+
+```yaml
+dependencies:
+  bip39_mnemonic:
+    git:
+      url: https://github.com/devdasx/swift-bip39-mnemonic.git
+      ref: 1.1.0
 ```
 
 ## Usage

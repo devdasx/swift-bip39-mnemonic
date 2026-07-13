@@ -65,7 +65,10 @@ esac
 
 case "$arch" in
   arm64|aarch64) cpu="arm64" ;;
-  x86_64|amd64) cpu="x86_64" ;;
+  x86_64|amd64)
+    echo "macOS x86_64 release binaries are not published yet. Use Homebrew to build from source: brew tap devdasx/tap && brew install swiftbip39" >&2
+    exit 1
+    ;;
   *) echo "unsupported architecture: $arch" >&2; exit 1 ;;
 esac
 

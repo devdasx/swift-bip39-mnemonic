@@ -4,7 +4,7 @@ BIP39 Mnemonic Kit is a monorepo containing BIP-39 implementations for Swift, CL
 
 Canonical repository: https://github.com/devdasx/bip39-mnemonic-kit
 
-Current breaking rename release: `2.0.0`.
+Current breaking rename release: `2.0.1`.
 
 ## Package identity
 
@@ -61,6 +61,14 @@ cargo test
 dart pub get && dart test dart/test
 gradle test
 ```
+
+Before publishing a release, run real consumer installs from GitHub:
+
+```bash
+scripts/test-consumer-packages.sh --ref 2.0.1 --install-missing
+```
+
+This verifies Swift Package Manager, CLI installer, Node.js, React Native entry point, Python, Rust, Go, Dart/Flutter-compatible usage, and Kotlin/JVM against the official `abandon ... about` vector.
 
 ## Safety rules
 

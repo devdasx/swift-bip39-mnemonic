@@ -56,7 +56,7 @@ Or add it to `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/devdasx/bip39-mnemonic-kit.git", from: "2.0.0")
+    .package(url: "https://github.com/devdasx/bip39-mnemonic-kit.git", from: "2.0.1")
 ]
 ```
 
@@ -122,7 +122,7 @@ Use it:
 
 ```js
 import {
-  entropyHexToMnemonic,
+  entropyToMnemonic,
   generateMnemonic,
   mnemonicToSeedHex,
   validateMnemonic
@@ -131,7 +131,7 @@ import {
 const phrase = generateMnemonic({ words: 12 });
 const valid = validateMnemonic(phrase);
 const seed = mnemonicToSeedHex(phrase, "optional-passphrase");
-const deterministic = entropyHexToMnemonic("00000000000000000000000000000000");
+const deterministic = entropyToMnemonic("00000000000000000000000000000000");
 ```
 
 ## React Native
@@ -154,7 +154,7 @@ const valid = validateMnemonic(phrase);
 Install from GitHub:
 
 ```bash
-pip install "git+https://github.com/devdasx/bip39-mnemonic-kit.git@2.0.0"
+pip install "git+https://github.com/devdasx/bip39-mnemonic-kit.git@2.0.1"
 ```
 
 When PyPI credentials are configured, the package name is:
@@ -167,7 +167,7 @@ Use it:
 
 ```python
 from bip39_mnemonic_kit import (
-    entropy_hex_to_mnemonic,
+    entropy_to_mnemonic,
     generate_mnemonic,
     mnemonic_to_seed_hex,
     validate_mnemonic,
@@ -176,7 +176,7 @@ from bip39_mnemonic_kit import (
 phrase = generate_mnemonic(words=12)
 valid = validate_mnemonic(phrase)
 seed = mnemonic_to_seed_hex(phrase, passphrase="optional-passphrase")
-deterministic = entropy_hex_to_mnemonic("00000000000000000000000000000000")
+deterministic = entropy_to_mnemonic("00000000000000000000000000000000")
 ```
 
 ## Rust
@@ -184,7 +184,7 @@ deterministic = entropy_hex_to_mnemonic("00000000000000000000000000000000")
 Install from GitHub:
 
 ```bash
-cargo add --git https://github.com/devdasx/bip39-mnemonic-kit --tag 2.0.0 bip39-mnemonic-kit
+cargo add --git https://github.com/devdasx/bip39-mnemonic-kit --tag 2.0.1 bip39-mnemonic-kit
 ```
 
 When crates.io credentials are configured, the crate name is:
@@ -214,7 +214,7 @@ let deterministic = entropy_hex_to_mnemonic("00000000000000000000000000000000")?
 Install from GitHub:
 
 ```bash
-go get github.com/devdasx/bip39-mnemonic-kit/v2/go/bip39@v2.0.0
+go get github.com/devdasx/bip39-mnemonic-kit/v2/go/bip39@v2.0.1
 ```
 
 Use it:
@@ -229,9 +229,9 @@ import (
 )
 
 func main() {
-    phrase, _ := bip39.GenerateMnemonic(12)
-    valid := bip39.ValidateMnemonic(phrase)
-    seed, _ := bip39.MnemonicToSeedHex(phrase, "optional-passphrase")
+    phrase, _ := bip39.Generate(12)
+    valid := bip39.Validate(phrase)
+    seed, _ := bip39.SeedHex(phrase, "optional-passphrase")
     deterministic, _ := bip39.EntropyHexToMnemonic("00000000000000000000000000000000")
 
     fmt.Println(phrase, valid, seed, deterministic)
@@ -247,14 +247,14 @@ dependencies:
   bip39_mnemonic_kit:
     git:
       url: https://github.com/devdasx/bip39-mnemonic-kit.git
-      ref: 2.0.0
+      ref: 2.0.1
 ```
 
 When pub.dev credentials are configured, the package name is:
 
 ```yaml
 dependencies:
-  bip39_mnemonic_kit: ^2.0.0
+  bip39_mnemonic_kit: ^2.0.1
 ```
 
 Use it:
@@ -278,7 +278,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.devdasx:bip39-mnemonic-kit:2.0.0")
+    implementation("com.github.devdasx:bip39-mnemonic-kit:2.0.1")
 }
 ```
 
@@ -305,6 +305,7 @@ Current validation covers:
 - repeated random mnemonic generation
 - CLI validation and seed derivation
 - CI jobs for Swift, JavaScript, Python, Go, Rust, Dart, and Kotlin
+- end-to-end consumer installs from GitHub for every supported ecosystem
 
 Official vector check:
 
@@ -313,6 +314,14 @@ mnemonic: abandon abandon abandon abandon abandon abandon abandon abandon abando
 passphrase: TREZOR
 seed: c55257c360c07c72029aebc1b53c05ed0362ada38ead3e3e9efa3708e53495531f09a6987599d18264c1e1c92f2cf141630c7a3c4ab7c81b2f001698e7463b04
 ```
+
+Run full local consumer-package validation on macOS:
+
+```bash
+scripts/test-consumer-packages.sh --ref 2.0.1 --install-missing
+```
+
+That script creates fresh temporary consumer apps, installs packages from the GitHub tag, and verifies the official vector for Swift Package Manager, the CLI installer, Node.js, the React Native entry point, Python, Rust, Go, Dart/Flutter-compatible usage, and Kotlin/JVM. Add `--include-homebrew` when you also want to reinstall and test the public Homebrew tap.
 
 ## AI-agent readability
 
@@ -330,7 +339,7 @@ AI agents should treat GitHub tags as canonical, prefer examples in this README,
 ## Source of truth and release model
 
 - Source code: GitHub repository `devdasx/bip39-mnemonic-kit`.
-- Release tags: semantic versions such as `2.0.0`.
+- Release tags: semantic versions such as `2.0.1`.
 - Generated CLI binaries: GitHub Releases.
 - Homebrew: public tap `devdasx/homebrew-tap`, formula `bip39kit`.
 - External registries should publish from GitHub tags only.

@@ -1,6 +1,6 @@
 {
   "name": "bip39-mnemonic-kit",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "BIP-39 mnemonic generation, validation, entropy conversion, and seed derivation for JavaScript and React Native.",
   "type": "module",
   "main": "./javascript/index.js",

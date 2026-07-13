@@ -15,7 +15,7 @@ Usage:
 
 Options:
   --prefix DIR       Install prefix. Default: ~/.local
-  --version VERSION  Release version, for example 2.0.0. Default: latest
+  --version VERSION  Release version, for example 2.0.1. Default: latest
   --uninstall        Remove the installed binary and resource bundle from PREFIX/bin
   --help             Show help
 EOF

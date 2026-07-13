@@ -1,7 +1,7 @@
 import Foundation
 import BIP39MnemonicKit
 
-private let version = "1.1.0"
+private let version = "2.0.1"
 
 enum CLIError: Error, CustomStringConvertible {
     case invalidCommand(String)

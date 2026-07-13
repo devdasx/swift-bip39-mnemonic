@@ -4,10 +4,21 @@ plugins {
 }
 
 group = findProperty("group")?.toString() ?: "com.devdasx.bip39"
-version = findProperty("version")?.toString() ?: "2.0.0"
+version = findProperty("version")?.toString() ?: "2.0.1"
 
 kotlin {
     jvmToolchain(17)
+
+    sourceSets {
+        main {
+            kotlin.srcDir("kotlin/src/main/kotlin")
+            resources.srcDir("kotlin/src/main/resources")
+        }
+        test {
+            kotlin.srcDir("kotlin/src/test/kotlin")
+            resources.srcDir("kotlin/src/test/resources")
+        }
+    }
 }
 
 dependencies {

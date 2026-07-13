@@ -1,7 +1,7 @@
 class Swiftbip39 < Formula
   desc "BIP-39 mnemonic generator, validator, and seed derivation CLI"
   homepage "https://github.com/devdasx/swift-bip39-mnemonic"
-  url "https://github.com/devdasx/swift-bip39-mnemonic/archive/refs/tags/1.1.0.tar.gz"
+  url "https://github.com/devdasx/swift-bip39-mnemonic/archive/refs/tags/1.1.1.tar.gz"
   license "MIT"
 
   depends_on :macos

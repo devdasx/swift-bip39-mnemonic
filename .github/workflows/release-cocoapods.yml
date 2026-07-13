@@ -26,4 +26,4 @@ jobs:
         run: pod lib lint SwiftBIP39.podspec --allow-warnings --skip-tests --swift-version=6.0 --platforms=ios,macos
 
       - name: Publish podspec
-        run: pod trunk push SwiftBIP39.podspec --allow-warnings --skip-tests --swift-version=6.0 --platforms=ios,macos
+        run: pod trunk push SwiftBIP39.podspec --allow-warnings --skip-tests --swift-version=6.0

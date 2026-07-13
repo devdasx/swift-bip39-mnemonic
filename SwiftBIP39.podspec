@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'SwiftBIP39'
-  s.version      = '1.1.3'
+  s.version      = '1.1.4'
   s.summary      = 'Swift BIP-39 mnemonic generation, validation, and seed derivation for Apple platforms.'
   s.description  = <<-DESC
     SwiftBIP39 is a Swift library for generating valid BIP-39 English mnemonic phrases,

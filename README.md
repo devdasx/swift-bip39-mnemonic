@@ -45,7 +45,7 @@ Or in `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/devdasx/swift-bip39-mnemonic.git", from: "1.1.3")
+    .package(url: "https://github.com/devdasx/swift-bip39-mnemonic.git", from: "1.1.4")
 ]
 ```
 
@@ -80,9 +80,9 @@ Install directly from GitHub where supported:
 
 ```bash
 npm install github:devdasx/swift-bip39-mnemonic
-pip install git+https://github.com/devdasx/swift-bip39-mnemonic.git@1.1.3
-go get github.com/devdasx/swift-bip39-mnemonic/go/bip39@v1.1.3
-cargo add --git https://github.com/devdasx/swift-bip39-mnemonic --tag 1.1.3 swiftbip39
+pip install git+https://github.com/devdasx/swift-bip39-mnemonic.git@1.1.4
+go get github.com/devdasx/swift-bip39-mnemonic/go/bip39@v1.1.4
+cargo add --git https://github.com/devdasx/swift-bip39-mnemonic --tag 1.1.4 swiftbip39
 ```
 
 Dart/Flutter can use a Git dependency:
@@ -92,7 +92,19 @@ dependencies:
   bip39_mnemonic:
     git:
       url: https://github.com/devdasx/swift-bip39-mnemonic.git
-      ref: 1.1.3
+      ref: 1.1.4
+```
+
+Kotlin/JVM can be consumed from GitHub through JitPack:
+
+```kotlin
+repositories {
+    maven("https://jitpack.io")
+}
+
+dependencies {
+    implementation("com.github.devdasx.swift-bip39-mnemonic:swiftbip39:1.1.4")
+}
 ```
 
 ## Usage

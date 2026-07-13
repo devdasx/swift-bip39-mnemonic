@@ -3,8 +3,8 @@ plugins {
     `maven-publish`
 }
 
-group = "com.devdasx"
-version = "1.1.3"
+group = findProperty("group")?.toString() ?: "com.devdasx"
+version = findProperty("version")?.toString() ?: "1.1.4"
 
 kotlin {
     jvmToolchain(17)
@@ -23,7 +23,7 @@ publishing {
     publications {
         create<MavenPublication>("maven") {
             from(components["java"])
-            groupId = "com.devdasx"
+            groupId = project.group.toString()
             artifactId = "swiftbip39"
             version = project.version.toString()
         }

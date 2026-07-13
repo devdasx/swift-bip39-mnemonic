@@ -1,21 +1,21 @@
 #!/usr/bin/env sh
 set -eu
 
-REPO="devdasx/swift-bip39-mnemonic"
-BIN="swiftbip39"
+REPO="devdasx/bip39-mnemonic-kit"
+BIN="bip39kit"
 VERSION="${VERSION:-latest}"
 PREFIX="${PREFIX:-$HOME/.local}"
 
 usage() {
   cat <<'EOF'
-Install swiftbip39 from GitHub Releases.
+Install bip39kit from GitHub Releases.
 
 Usage:
   sh install.sh [--prefix DIR] [--version VERSION] [--uninstall] [--help]
 
 Options:
   --prefix DIR       Install prefix. Default: ~/.local
-  --version VERSION  Release version, for example 1.1.2. Default: latest
+  --version VERSION  Release version, for example 2.0.0. Default: latest
   --uninstall        Remove the installed binary and resource bundle from PREFIX/bin
   --help             Show help
 EOF
@@ -35,7 +35,7 @@ while [ "$#" -gt 0 ]; do
       ;;
     --uninstall)
       rm -f "$PREFIX/bin/$BIN"
-      rm -rf "$PREFIX/bin/SwiftBIP39_SwiftBIP39.bundle"
+      rm -rf "$PREFIX/bin/BIP39MnemonicKit_BIP39MnemonicKit.bundle"
       echo "removed $PREFIX/bin/$BIN"
       exit 0
       ;;
@@ -66,7 +66,7 @@ esac
 case "$arch" in
   arm64|aarch64) cpu="arm64" ;;
   x86_64|amd64)
-    echo "macOS x86_64 release binaries are not published yet. Use Homebrew to build from source: brew tap devdasx/tap && brew install swiftbip39" >&2
+    echo "macOS x86_64 release binaries are not published yet. Use Homebrew to build from source: brew tap devdasx/tap && brew install bip39kit" >&2
     exit 1
     ;;
   *) echo "unsupported architecture: $arch" >&2; exit 1 ;;
@@ -95,8 +95,8 @@ actual="$(shasum -a 256 "$tmp/$asset" | awk '{print $1}')"
 tar -xzf "$tmp/$asset" -C "$tmp"
 mkdir -p "$PREFIX/bin"
 install -m 755 "$tmp/$BIN" "$PREFIX/bin/$BIN"
-rm -rf "$PREFIX/bin/SwiftBIP39_SwiftBIP39.bundle"
-cp -R "$tmp/SwiftBIP39_SwiftBIP39.bundle" "$PREFIX/bin/SwiftBIP39_SwiftBIP39.bundle"
+rm -rf "$PREFIX/bin/BIP39MnemonicKit_BIP39MnemonicKit.bundle"
+cp -R "$tmp/BIP39MnemonicKit_BIP39MnemonicKit.bundle" "$PREFIX/bin/BIP39MnemonicKit_BIP39MnemonicKit.bundle"
 
 echo "installed $BIN to $PREFIX/bin/$BIN"
 case ":$PATH:" in

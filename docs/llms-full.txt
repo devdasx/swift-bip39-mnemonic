@@ -1,0 +1,71 @@
+# BIP39 Mnemonic Kit full agent context
+
+BIP39 Mnemonic Kit is a monorepo containing BIP-39 implementations for Swift, CLI, JavaScript, React Native, Python, Rust, Go, Dart/Flutter, and Kotlin/JVM.
+
+Canonical repository: https://github.com/devdasx/bip39-mnemonic-kit
+
+Current breaking rename release: `2.0.0`.
+
+## Package identity
+
+- Repository: `devdasx/bip39-mnemonic-kit`
+- Swift product/module: `BIP39MnemonicKit`
+- CLI binary: `bip39kit`
+- Homebrew formula: `bip39kit`
+- CocoaPods pod: `BIP39MnemonicKit`
+- npm package: `bip39-mnemonic-kit`
+- React Native entry point: `bip39-mnemonic-kit/react-native`
+- Python package: `bip39-mnemonic-kit`, import `bip39_mnemonic_kit`
+- Rust crate: `bip39-mnemonic-kit`, import `bip39_mnemonic_kit`
+- Go module: `github.com/devdasx/bip39-mnemonic-kit/v2`
+- Dart package: `bip39_mnemonic_kit`
+- Kotlin JitPack artifact: `com.github.devdasx:bip39-mnemonic-kit`
+
+## Repository layout
+
+- `Sources/BIP39MnemonicKit`: Swift library.
+- `Sources/BIP39KitCLI`: Swift CLI.
+- `javascript`: JavaScript and React Native exports.
+- `python/bip39_mnemonic_kit`: Python package.
+- `rust/src`: Rust crate.
+- `go/bip39`: Go package.
+- `lib`: Dart/Flutter package.
+- `kotlin/src/main`: Kotlin/JVM package.
+- `test-vectors`: canonical English BIP-39 vectors and word list.
+
+## Required behavior
+
+Each implementation must:
+
+- generate 12, 15, 18, 21, and 24-word BIP-39 English mnemonics;
+- convert entropy bytes/hex to a mnemonic;
+- validate word count, known words, and checksum;
+- derive a 64-byte seed using PBKDF2-HMAC-SHA512 with salt `mnemonic` plus passphrase;
+- match the official vector for `abandon abandon ... about` with passphrase `TREZOR`.
+
+Expected seed:
+
+```text
+c55257c360c07c72029aebc1b53c05ed0362ada38ead3e3e9efa3708e53495531f09a6987599d18264c1e1c92f2cf141630c7a3c4ab7c81b2f001698e7463b04
+```
+
+## Validation commands
+
+```bash
+swift test -c release
+swift run -c release bip39kit validate "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about"
+npm ci && npm test
+PYTHONPATH=python python -m unittest discover python/tests
+go test ./go/...
+cargo test
+dart pub get && dart test dart/test
+gradle test
+```
+
+## Safety rules
+
+- Do not change the word list unless updating from an official BIP-39 source.
+- Do not weaken checksum validation.
+- Do not use insecure randomness for generated production mnemonics.
+- Do not include random generated mnemonics in docs; use deterministic vectors only.
+- Keep README, package manifests, docs site, llms files, and GitHub repo metadata in sync when renaming.

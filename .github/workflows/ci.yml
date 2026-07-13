@@ -18,7 +18,7 @@ jobs:
       - run: swift --version
       - run: swift build
       - run: swift test
-      - run: swift run swiftbip39 validate "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about"
+      - run: swift run bip39kit validate "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about"
 
   javascript:
     runs-on: ubuntu-latest

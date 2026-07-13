@@ -1,9 +1,9 @@
-name: bip39_mnemonic
-version: 1.1.4
-description: BIP-39 mnemonic generation, validation, and seed derivation for Dart and Flutter.
-homepage: https://github.com/devdasx/swift-bip39-mnemonic
-repository: https://github.com/devdasx/swift-bip39-mnemonic
-issue_tracker: https://github.com/devdasx/swift-bip39-mnemonic/issues
+name: bip39_mnemonic_kit
+version: 2.0.0
+description: BIP-39 mnemonic generation, validation, entropy conversion, and seed derivation for Dart and Flutter.
+homepage: https://github.com/devdasx/bip39-mnemonic-kit
+repository: https://github.com/devdasx/bip39-mnemonic-kit
+issue_tracker: https://github.com/devdasx/bip39-mnemonic-kit/issues
 
 environment:
   sdk: ">=3.3.0 <4.0.0"

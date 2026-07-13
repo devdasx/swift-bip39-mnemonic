@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "SwiftBIP39",
+    name: "BIP39MnemonicKit",
     platforms: [
         .iOS(.v15),
         .macOS(.v12),
@@ -12,28 +12,28 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "SwiftBIP39",
-            targets: ["SwiftBIP39"]
+            name: "BIP39MnemonicKit",
+            targets: ["BIP39MnemonicKit"]
         ),
         .executable(
-            name: "swiftbip39",
-            targets: ["SwiftBIP39CLI"]
+            name: "bip39kit",
+            targets: ["BIP39KitCLI"]
         ),
     ],
     targets: [
         .target(
-            name: "SwiftBIP39",
+            name: "BIP39MnemonicKit",
             resources: [
                 .process("Resources")
             ]
         ),
         .executableTarget(
-            name: "SwiftBIP39CLI",
-            dependencies: ["SwiftBIP39"]
+            name: "BIP39KitCLI",
+            dependencies: ["BIP39MnemonicKit"]
         ),
         .testTarget(
-            name: "SwiftBIP39Tests",
-            dependencies: ["SwiftBIP39"],
+            name: "BIP39MnemonicKitTests",
+            dependencies: ["BIP39MnemonicKit"],
             resources: [
                 .process("Resources")
             ]

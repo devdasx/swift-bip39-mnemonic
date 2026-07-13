@@ -14,7 +14,7 @@ jobs:
       matrix:
         include:
           - runner: macos-latest
-            asset: swiftbip39-macos-arm64.tar.gz
+            asset: bip39kit-macos-arm64.tar.gz
     runs-on: ${{ matrix.runner }}
     steps:
       - uses: actions/checkout@v4
@@ -24,9 +24,9 @@ jobs:
       - run: swift build -c release
       - run: |
           mkdir -p dist
-          cp .build/release/swiftbip39 dist/swiftbip39
-          cp -R .build/release/SwiftBIP39_SwiftBIP39.bundle dist/SwiftBIP39_SwiftBIP39.bundle
-          tar -C dist -czf "${{ matrix.asset }}" swiftbip39 SwiftBIP39_SwiftBIP39.bundle
+          cp .build/release/bip39kit dist/bip39kit
+          cp -R .build/release/BIP39MnemonicKit_BIP39MnemonicKit.bundle dist/BIP39MnemonicKit_BIP39MnemonicKit.bundle
+          tar -C dist -czf "${{ matrix.asset }}" bip39kit BIP39MnemonicKit_BIP39MnemonicKit.bundle
           shasum -a 256 "${{ matrix.asset }}" > "${{ matrix.asset }}.sha256"
       - uses: actions/upload-artifact@v4
         with:
@@ -48,5 +48,5 @@ jobs:
       - uses: softprops/action-gh-release@v2
         with:
           files: |
-            swiftbip39-*.tar.gz
+            bip39kit-*.tar.gz
             checksums.txt

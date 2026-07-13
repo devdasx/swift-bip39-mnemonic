@@ -1,10 +1,10 @@
-# ``SwiftBIP39``
+# ``BIP39MnemonicKit``
 
 Generate, validate, and derive BIP-39 recovery phrases in Swift.
 
 ## Overview
 
-SwiftBIP39 provides:
+BIP39MnemonicKit provides:
 
 - BIP-39 English mnemonic generation
 - phrase parsing and checksum validation

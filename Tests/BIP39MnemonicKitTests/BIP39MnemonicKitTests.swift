@@ -1,6 +1,6 @@
 import Foundation
 import Testing
-@testable import SwiftBIP39
+@testable import BIP39MnemonicKit
 
 @Test func matchesAllOfficialEnglishBIP39Vectors() throws {
     let vectors = try loadEnglishVectors()

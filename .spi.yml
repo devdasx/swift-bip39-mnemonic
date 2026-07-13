@@ -3,4 +3,4 @@ version: 1
 builder:
   configs:
     - documentation_targets:
-        - SwiftBIP39
+        - BIP39MnemonicKit

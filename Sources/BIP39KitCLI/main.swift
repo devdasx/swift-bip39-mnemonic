@@ -1,5 +1,5 @@
 import Foundation
-import SwiftBIP39
+import BIP39MnemonicKit
 
 private let version = "1.1.0"
 
@@ -104,15 +104,15 @@ func value(after option: String, in args: [String]) -> String? {
 
 func printUsage() {
     print("""
-    swiftbip39 \(version)
+    bip39kit \(version)
 
     Usage:
-      swiftbip39 generate [--words 12|15|18|21|24]
-      swiftbip39 generate [--strength 128|160|192|224|256]
-      swiftbip39 validate "<mnemonic phrase>"
-      swiftbip39 seed "<mnemonic phrase>" [--passphrase value]
-      swiftbip39 entropy-to-mnemonic <hex>
-      swiftbip39 version
+      bip39kit generate [--words 12|15|18|21|24]
+      bip39kit generate [--strength 128|160|192|224|256]
+      bip39kit validate "<mnemonic phrase>"
+      bip39kit seed "<mnemonic phrase>" [--passphrase value]
+      bip39kit entropy-to-mnemonic <hex>
+      bip39kit version
     """)
 }
 

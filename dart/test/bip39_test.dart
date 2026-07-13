@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:bip39_mnemonic/bip39_mnemonic.dart';
+import 'package:bip39_mnemonic_kit/bip39_mnemonic_kit.dart';
 import 'package:test/test.dart';
 
 void main() {

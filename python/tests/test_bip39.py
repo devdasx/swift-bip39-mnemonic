@@ -2,7 +2,7 @@ import json
 import pathlib
 import unittest
 
-from swiftbip39 import (
+from bip39_mnemonic_kit import (
     entropy_to_mnemonic,
     generate_mnemonic,
     mnemonic_to_seed_hex,

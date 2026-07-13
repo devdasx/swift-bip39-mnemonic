@@ -1,5 +1,7 @@
 use serde::Deserialize;
-use swiftbip39::{entropy_hex_to_mnemonic, generate_mnemonic, mnemonic_to_seed_hex, validate_mnemonic};
+use bip39_mnemonic_kit::{
+    entropy_hex_to_mnemonic, generate_mnemonic, mnemonic_to_seed_hex, validate_mnemonic,
+};
 
 #[derive(Deserialize)]
 struct Vector {

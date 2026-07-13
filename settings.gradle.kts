@@ -12,4 +12,4 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "swiftbip39"
+rootProject.name = "bip39-mnemonic-kit"

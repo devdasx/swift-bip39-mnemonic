@@ -1,4 +1,4 @@
-package com.devdasx.swiftbip39
+package com.devdasx.bip39mnemonickit
 
 import java.security.MessageDigest
 import java.security.SecureRandom
@@ -7,7 +7,7 @@ import javax.crypto.spec.SecretKeySpec
 
 object Bip39 {
     private val words: List<String> = Bip39::class.java
-        .getResourceAsStream("/com/devdasx/swiftbip39/english.txt")!!
+        .getResourceAsStream("/com/devdasx/bip39mnemonickit/english.txt")!!
         .bufferedReader()
         .readLines()
 

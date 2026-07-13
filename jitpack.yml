@@ -5,4 +5,4 @@ before_install:
   - sdk install gradle 8.10.2
 
 install:
-  - gradle -Pgroup=com.github.devdasx.swift-bip39-mnemonic -Pversion=$VERSION publishToMavenLocal
+  - gradle -Pgroup=com.github.devdasx -Pversion=$VERSION publishToMavenLocal

@@ -34,7 +34,7 @@ enum BIP39EnglishWordlist {
                 return direct
             }
 
-            if let resourceBundleURL = bundle.url(forResource: "SwiftBIP39Resources", withExtension: "bundle"),
+            if let resourceBundleURL = bundle.url(forResource: "BIP39MnemonicKitResources", withExtension: "bundle"),
                let resourceBundle = Bundle(url: resourceBundleURL),
                let nested = resourceBundle.url(forResource: "english", withExtension: "txt") {
                 return nested

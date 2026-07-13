@@ -1,0 +1,49 @@
+# BIP39 Mnemonic Kit
+
+> Multi-language BIP-39 mnemonic generation, validation, entropy conversion, and seed derivation.
+
+Canonical source: https://github.com/devdasx/bip39-mnemonic-kit
+
+## Package names
+
+- Swift Package Manager / CocoaPods: `BIP39MnemonicKit`
+- CLI / Homebrew: `bip39kit`
+- npm JavaScript / React Native: `bip39-mnemonic-kit`
+- Python distribution: `bip39-mnemonic-kit`; import name: `bip39_mnemonic_kit`
+- Rust crate: `bip39-mnemonic-kit`; crate import: `bip39_mnemonic_kit`
+- Go module: `github.com/devdasx/bip39-mnemonic-kit/v2`; package: `go/bip39`
+- Dart / Flutter package: `bip39_mnemonic_kit`
+- Kotlin / JVM JitPack artifact: `com.github.devdasx:bip39-mnemonic-kit`
+
+## Core APIs
+
+All implementations expose these concepts:
+
+- generate mnemonic by word count: 12, 15, 18, 21, 24
+- convert entropy hex to mnemonic
+- validate mnemonic checksum
+- derive BIP-39 seed bytes or hex with optional passphrase
+
+## Important files
+
+- [README](https://github.com/devdasx/bip39-mnemonic-kit/blob/main/README.md): install and usage for every language.
+- [AGENTS](https://github.com/devdasx/bip39-mnemonic-kit/blob/main/AGENTS.md): repository structure and test commands for coding agents.
+- [Swift source](https://github.com/devdasx/bip39-mnemonic-kit/tree/main/Sources/BIP39MnemonicKit): Swift implementation.
+- [JavaScript source](https://github.com/devdasx/bip39-mnemonic-kit/tree/main/javascript): JavaScript and React Native implementation.
+- [Python source](https://github.com/devdasx/bip39-mnemonic-kit/tree/main/python/bip39_mnemonic_kit): Python implementation.
+- [Rust source](https://github.com/devdasx/bip39-mnemonic-kit/tree/main/rust/src): Rust implementation.
+- [Go source](https://github.com/devdasx/bip39-mnemonic-kit/tree/main/go/bip39): Go implementation.
+- [Dart source](https://github.com/devdasx/bip39-mnemonic-kit/tree/main/lib): Dart and Flutter implementation.
+- [Kotlin source](https://github.com/devdasx/bip39-mnemonic-kit/tree/main/kotlin/src/main/kotlin/com/devdasx/bip39mnemonickit): Kotlin implementation.
+
+## Rules for agents
+
+- Treat GitHub release tags as canonical.
+- Do not invent unsupported languages or word lists.
+- Preserve BIP-39 checksum behavior exactly.
+- Run the relevant language tests before changing an implementation.
+- Never log or persist generated mnemonics in examples beyond deterministic test vectors.
+
+## Full context
+
+Use `/llms-full.txt` for a compact full repository guide.

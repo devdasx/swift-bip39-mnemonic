@@ -1,0 +1,29 @@
+# BIP39 Mnemonic Kit
+
+> Multi-language BIP-39 mnemonic generation, validation, entropy conversion, and seed derivation.
+
+Canonical source: https://github.com/devdasx/bip39-mnemonic-kit
+
+## Package names
+
+- Swift Package Manager / CocoaPods: `BIP39MnemonicKit`
+- CLI / Homebrew: `bip39kit`
+- npm JavaScript / React Native: `bip39-mnemonic-kit`
+- Python distribution: `bip39-mnemonic-kit`; import name: `bip39_mnemonic_kit`
+- Rust crate: `bip39-mnemonic-kit`; crate import: `bip39_mnemonic_kit`
+- Go module: `github.com/devdasx/bip39-mnemonic-kit/v2`; package: `go/bip39`
+- Dart / Flutter package: `bip39_mnemonic_kit`
+- Kotlin / JVM JitPack artifact: `com.github.devdasx:bip39-mnemonic-kit`
+
+## Important files
+
+- README: https://github.com/devdasx/bip39-mnemonic-kit/blob/main/README.md
+- Agent guide: https://github.com/devdasx/bip39-mnemonic-kit/blob/main/AGENTS.md
+- Full LLM context: https://devdasx.github.io/bip39-mnemonic-kit/llms-full.txt
+
+## Rules for agents
+
+- Treat GitHub release tags as canonical.
+- Preserve BIP-39 checksum behavior exactly.
+- Run relevant language tests before changing an implementation.
+- Never log or persist generated mnemonics outside deterministic test vectors.

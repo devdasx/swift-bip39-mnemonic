@@ -1,4 +1,4 @@
-package com.devdasx.swiftbip39
+package com.devdasx.bip39mnemonickit
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
@@ -9,7 +9,7 @@ import kotlin.test.assertTrue
 class Bip39Test {
     @Test
     fun officialVectors() {
-        val json = javaClass.getResourceAsStream("/com/devdasx/swiftbip39/english-vectors.json")!!
+        val json = javaClass.getResourceAsStream("/com/devdasx/bip39mnemonickit/english-vectors.json")!!
             .bufferedReader()
             .readText()
         val vectors: List<Vector> = jacksonObjectMapper().readValue(json)

@@ -103,7 +103,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.devdasx.swift-bip39-mnemonic:swiftbip39:1.1.4")
+    implementation("com.github.devdasx:swift-bip39-mnemonic:1.1.4")
 }
 ```
 

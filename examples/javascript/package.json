@@ -1,0 +1,11 @@
+{
+  "name": "bip39kit-javascript-example",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node example.mjs"
+  },
+  "dependencies": {
+    "bip39-mnemonic-kit": "github:devdasx/bip39-mnemonic-kit#2.0.1"
+  }
+}

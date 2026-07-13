@@ -1,0 +1,11 @@
+name: bip39kit_dart_flutter_example
+publish_to: none
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  bip39_mnemonic_kit:
+    git:
+      url: https://github.com/devdasx/bip39-mnemonic-kit.git
+      ref: 2.0.1

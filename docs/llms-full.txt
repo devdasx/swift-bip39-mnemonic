@@ -32,6 +32,7 @@ Current breaking rename release: `2.0.1`.
 - `lib`: Dart/Flutter package.
 - `kotlin/src/main`: Kotlin/JVM package.
 - `test-vectors`: canonical English BIP-39 vectors and word list.
+- `examples`: install-and-run examples for every supported ecosystem.
 
 ## Required behavior
 
@@ -69,6 +70,12 @@ scripts/test-consumer-packages.sh --ref 2.0.1 --install-missing
 ```
 
 This verifies Swift Package Manager, CLI installer, Node.js, React Native entry point, Python, Rust, Go, Dart/Flutter-compatible usage, and Kotlin/JVM against the official `abandon ... about` vector.
+
+Run all documentation examples:
+
+```bash
+examples/run-examples.sh
+```
 
 ## Safety rules
 

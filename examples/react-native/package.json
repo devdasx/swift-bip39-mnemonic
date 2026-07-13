@@ -1,0 +1,14 @@
+{
+  "name": "bip39kit-react-native-example",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "smoke": "node smoke-test.mjs"
+  },
+  "dependencies": {
+    "bip39-mnemonic-kit": "github:devdasx/bip39-mnemonic-kit#2.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0"
+  }
+}

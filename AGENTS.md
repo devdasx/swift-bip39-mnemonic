@@ -36,6 +36,12 @@ scripts/test-consumer-packages.sh --ref 2.0.1 --install-missing
 
 This creates fresh temporary projects and validates Swift Package Manager, CLI installer, Node.js, React Native entry point, Python, Rust, Go, Dart/Flutter-compatible usage, and Kotlin/JVM.
 
+Run all documentation examples:
+
+```bash
+examples/run-examples.sh
+```
+
 For CLI changes, also run:
 
 ```bash

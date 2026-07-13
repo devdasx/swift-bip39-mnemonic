@@ -27,6 +27,16 @@ Every package in this repository is built from the same canonical English BIP-39
 | Dart / Flutter | `bip39_mnemonic_kit` | `import 'package:bip39_mnemonic_kit/bip39_mnemonic_kit.dart';` |
 | Kotlin / JVM | `com.github.devdasx:bip39-mnemonic-kit` | `com.devdasx.bip39mnemonickit.Bip39` |
 
+## Examples
+
+The [`examples`](examples) directory contains install-and-run examples for Swift Package Manager, CLI, JavaScript, React Native, Python, Rust, Go, Dart/Flutter, and Kotlin/JVM.
+
+Run all runnable examples locally:
+
+```bash
+examples/run-examples.sh
+```
+
 ## Features
 
 - Generate valid 12, 15, 18, 21, and 24-word BIP-39 English mnemonics.
@@ -331,6 +341,7 @@ This repository includes AI-readable project metadata:
 - `llms.txt` and `docs/llms.txt` with concise retrieval-oriented entry points.
 - `docs/llms-full.txt` with a compact full-context guide for coding agents.
 - `AGENTS.md` with repository structure, test commands, and safety rules.
+- `examples/` with real install-and-run projects for every supported ecosystem.
 - `.github/copilot-instructions.md` for GitHub Copilot and compatible coding agents.
 - Schema.org `SoftwareSourceCode` JSON-LD on the GitHub Pages site.
 

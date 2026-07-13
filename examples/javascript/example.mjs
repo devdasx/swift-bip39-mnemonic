@@ -1,0 +1,24 @@
+import {
+  entropyToMnemonic,
+  generateMnemonic,
+  mnemonicToSeedHex,
+  validateMnemonic
+} from "bip39-mnemonic-kit";
+
+const expectedPhrase = "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about";
+const expectedSeed = "c55257c360c07c72029aebc1b53c05ed0362ada38ead3e3e9efa3708e53495531f09a6987599d18264c1e1c92f2cf141630c7a3c4ab7c81b2f001698e7463b04";
+
+const phrase = entropyToMnemonic("00000000000000000000000000000000");
+if (phrase !== expectedPhrase) throw new Error("entropy vector failed");
+if (!validateMnemonic(phrase)) throw new Error("validation failed");
+if (validateMnemonic(phrase.replace("about", "above"))) throw new Error("bad checksum accepted");
+
+const seedHex = mnemonicToSeedHex(phrase, "TREZOR");
+if (seedHex !== expectedSeed) throw new Error("seed vector failed");
+
+const generated = generateMnemonic({ words: 12 });
+if (generated.split(/\s+/).length !== 12) throw new Error("generation failed");
+
+console.log("mnemonic:", phrase);
+console.log("seed prefix:", seedHex.slice(0, 16));
+console.log("generated words:", generated.split(/\s+/).length);

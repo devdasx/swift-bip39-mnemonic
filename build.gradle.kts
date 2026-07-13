@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.devdasx"
-version = "1.1.2"
+version = "1.1.3"
 
 kotlin {
     jvmToolchain(17)

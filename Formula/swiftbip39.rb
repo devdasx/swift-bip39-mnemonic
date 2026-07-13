@@ -9,8 +9,13 @@ class Swiftbip39 < Formula
 
   def install
     system "swift", "build", "-c", "release", "--disable-sandbox"
-    bin.install ".build/release/swiftbip39"
-    bin.install ".build/release/SwiftBIP39_SwiftBIP39.bundle"
+    libexec.install ".build/release/swiftbip39"
+    libexec.install ".build/release/SwiftBIP39_SwiftBIP39.bundle"
+
+    (bin/"swiftbip39").write <<~EOS
+      #!/bin/sh
+      exec "#{libexec}/swiftbip39" "$@"
+    EOS
   end
 
   test do
